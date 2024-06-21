@@ -1,0 +1,33 @@
+<div id="home">
+  <div class="main-content">
+    <div class="row mt-4">
+      <div class="col-sm-6">
+        <span class="creep">Início </span>
+      </div>
+      <div class="col-sm-6">
+        <form class="example-form">
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Pesquisar</mat-label>
+            <input
+              matInput
+              placeholder="Pesquisar.."
+              #textValue
+              (keyup)="onSearchInputChange(textValue.value)"
+            />
+          </mat-form-field>
+        </form>
+      </div>
+      </div>
+    <div *ngIf="listCharacters().length > 0" class="boxAppCard">
+      <app-card 
+        *ngFor="let item of listCharacters()"
+        [item]="item" />
+    </div>
+    <div *ngIf="listCharacters().length === 0" class="row">
+      <div class="emptySearch">
+        <p>Nada foi encontrado</p>
+        <span>Tente realizar uma nova busca.</span>
+      </div>
+    </div>
+  </div>
+</div>

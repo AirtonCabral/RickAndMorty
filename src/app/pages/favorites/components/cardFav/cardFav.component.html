@@ -1,0 +1,18 @@
+<mat-card class="charactersCard">
+  <img mat-card-image [src]="item.image" [alt]="item.name" />
+  <mat-card-header>
+    <mat-card-title>{{ item.name }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ item.species }} <br/>
+      {{ item.gender }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button *ngIf="!item.favorites" mat-button (click)="addItem(item)">
+      <mat-icon>favorite_outline</mat-icon>
+    </button>
+    <button *ngIf="item.favorites" mat-button (click)="removeItem(item)">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
