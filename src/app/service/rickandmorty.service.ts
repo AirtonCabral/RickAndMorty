@@ -66,10 +66,8 @@ export class RickandmortyService {
   addFavorite(item: any) {
     this.charactersSignal.update((characters: any) => {
       const index = characters.findIndex(
-        (character: any) => character.id === item.id
+        (character: any) => character.id === item.id ? characters.favorites = true : character 
       );
-      characters[index].favorites = true;
-      ;
       console.log("characters:", characters);
       return characters;
     });
@@ -91,10 +89,8 @@ export class RickandmortyService {
   removeFavorite(item: any) {
     this.charactersSignal.update((characters: any) => {
       const index = characters.findIndex(
-        (character: any) => character.id === item.id
-      );
-      characters[index].favorites = false;
-      ;
+        (character: any) => character.id === item.id ? characters.favorites = false : character
+      )
       console.log("characters:", characters);
       return characters;
     });
