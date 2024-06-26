@@ -4,13 +4,13 @@
       <div class="col-sm-6">
         <span class="creep">Início </span>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <form class="example-form">
-          <mat-form-field appearance="outline" class="example-full-width">
-            <mat-label>Pesquisar</mat-label>
+          <mat-form-field appearance="outline"  class="d-flex flex-end example-full-width">
+            <mat-label color="white">Pesquisar</mat-label>
             <input
               matInput
-              placeholder="Pesquisar.."
+              class="example-full-width"
               #textValue
               (keyup)="onSearchInputChange(textValue.value)"
             />

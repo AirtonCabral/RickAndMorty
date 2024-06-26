@@ -27,6 +27,7 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
+    this.searchInput.next('');
   }
 
   onSearchInputChange(searchTerm: string) {
